@@ -39,7 +39,7 @@ function AddCustomer(props) {
 
     return (
         <div>
-            <Button color = "primary" onClick = {handleClickOpen} variant="outlined">Add customer</Button>
+            <Button color = "primary" onClick = {handleClickOpen} variant="contained">Add customer</Button>
             <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title" >
             <DialogTitle id="form-dialog-title">Add customer</DialogTitle>
             <DialogContent>

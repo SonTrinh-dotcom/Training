@@ -42,7 +42,7 @@ const Training = () => {
 
             await Promise.all(promises);
             setTraining(trainings)
-            console.log(trainings);
+           console.log(trainings)
 
         }
         catch(e) {
@@ -62,8 +62,20 @@ const Training = () => {
         .catch(err => console.log(err))
     }
  */
-    const deleteAction = (params) => {
-        console.log(params)
+    const deleteAction = (link) => {
+        if(window.confirm('Are you sure?'))
+        {
+            fetch(link, {
+            method: 'DELETE'
+            })
+            .then(_ => main())
+            .then(_ =>{ 
+                setMsg('Deleted successfully')
+                setOpen(true)
+            })
+            .catch(err => console.err("WTF"))
+
+        }
     }
 
     const handleClose = () => {
@@ -94,14 +106,14 @@ const Training = () => {
              sortable: true, 
              filter: true },
             
-        {headerName: 'Activity',width:200, field:'activity', sortable: true, filter: true },
-        {headerName: 'Date',width:200, field:'date', sortable: true, filter: true },
-        {headerName: 'Duration(min)',width:200, field:'duration', sortable: true, filter: true },
+        {headerName: 'Activity',width:100, field:'activity', sortable: true, filter: true },
+        {headerName: 'Date',width:100, field:'date', sortable: true, filter: true },
+        {headerName: 'Duration(min)',width:50, field:'duration', sortable: true, filter: true },
         {
             headerName: 'Customer',
-            width: 50,
+            width: 10,
              field:'',
-             cellRendererFramework: params => <div>{main(params.data.customer.firstname)}</div>,
+             cellRendererFramework: params => <div>{params.data.customer.firstname}</div>,
              sortable: true, 
              filter: true ,
           

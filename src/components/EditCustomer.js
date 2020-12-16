@@ -55,7 +55,8 @@ function EditCustomer(props) {
     return (
         <div>
             <SettingsIcon onClick={handleClickOpen}
-                         size='small'
+                         size="small"
+                         
                          />
             <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
             <DialogTitle id="form-dialog-title">Edit customer information</DialogTitle>
