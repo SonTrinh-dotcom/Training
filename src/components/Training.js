@@ -5,7 +5,7 @@ import 'ag-grid-community/dist/styles/ag-theme-material.css';
 
 import DeleteIcon from '@material-ui/icons/Delete';
 
-import { AgGridReact } from 'ag-grid-react/lib/agGridReact';
+import { AgGridColumn, AgGridReact } from 'ag-grid-react';
 
 import Snackbar from '@material-ui/core/Snackbar';
 
