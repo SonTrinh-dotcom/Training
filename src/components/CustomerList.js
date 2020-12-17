@@ -46,8 +46,7 @@ function CustomerList(){
 
             await Promise.all(promises);
             setCustomer(customers)
-            console.log(customers)
-        
+     
 
         }
         catch(e) {

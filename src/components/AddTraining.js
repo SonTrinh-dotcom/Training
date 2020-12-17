@@ -21,28 +21,29 @@ const AddTraining = (props) => {
         date: '',
     });
 
-    const addTraining = (training,date) => {
-        fetch(props.params.data.training.content,{
-            method:'POST',
+  
+
+    const addTraining = () => {
+        const {href} = props?.params?.data?.links?.find(({rel}) => rel ==='self')
+        const data = {...training,
+            customer: href
+        }
+        console.log(data);
+        fetch('https://customerrest.herokuapp.com/api/trainings',{
+            method: 'POST',
             headers: {'Content-type' : 'application/json'},
-            body: JSON.stringify(training,selectedDate)
+            body: JSON.stringify(data)
+
         })
-       .then(_ => props.main )
-        .then(_ =>{
-            setOpen(true)
-        })
+        .then(_ => props.main)
+      
+
         .catch(err => console.log(err))
     }
 
     const [open,setOpen] = useState(false);
 
-    const handleOpen = () => {
-      
-        setOpen(true)
-        setTraining({
-            firstname: ''
-        })
-    }
+
     const handleClose= () => {
         setOpen(false)
     }
@@ -53,19 +54,26 @@ const AddTraining = (props) => {
 
    const handleSave = () => {
        
-      addTraining(training,selectedDate)
+      addTraining()
        setOpen(false)
    }
   
    
 
   
-   const [selectedDate,setSelectedDate] = useState(new Date('2020-12-18T21:11:54'));
+   const [selectedDate,setSelectedDate] = useState(new Date());
 
    const handleChanged = (date) => {
-    setSelectedDate(date)
+     setSelectedDate(date)
     }
 
+    const handleOpen = () => {
+        setOpen(true)
+       setTraining({
+            date: selectedDate,
+
+       })
+    }
    /*  console.log(selectedDate) */
 
   

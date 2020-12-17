@@ -95,16 +95,7 @@ const Training = () => {
    
     
     const columns = [
-        {
-            headerName: 'Action',
-            width: 50,
-             field:'',
-             cellRendererFramework: params => <DeleteIcon
-                                                size = 'small'
-                                                onClick = {() => deleteAction (params.data.links[0].href) }
-                                                ></DeleteIcon>,
-             sortable: true, 
-             filter: true },
+       
             
         {headerName: 'Activity',width:100, field:'activity', sortable: true, filter: true },
         {headerName: 'Date',width:100, field:'date', sortable: true, filter: true },
@@ -117,8 +108,17 @@ const Training = () => {
              sortable: true, 
              filter: true ,
           
-        }
-      
+        },
+        {
+            headerName: 'Action',
+            width: 50,
+             field:'',
+             cellRendererFramework: params => <DeleteIcon
+                                                size = 'small'
+                                                onClick = {() => deleteAction (params.data.links[0].href) }
+                                                ></DeleteIcon>,
+             sortable: true, 
+             filter: true },
 
     ]
 
