@@ -4,7 +4,7 @@ import CustomerList from './components/CustomerList';
 import Training from './components/Training';
 import TrainingCalendar from './components/TrainingCalendar'
 
-import { makeStyles } from '@material-ui/core/styles';
+
 import NavBar from './sidebar/NavBar'
 
 import {BrowserRouter as Router,Switch,Route,Link} from "react-router-dom";
