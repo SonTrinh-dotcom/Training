@@ -68,19 +68,7 @@ function CustomerList(){
         .catch(err => console.log(err))
     }
 
-    /* const addTraining = (newTraining,newDate) => {
-        fetch(data.training.content,{
-            method:'POST',
-            headers: {'Content-type' : 'application/json'},
-            body: JSON.stringify(newTraining,newDate)
-        })
-        .then(_ => main())
-        .then(_ =>{
-            setMsg('Training added succesfully')
-            setOpen(true)
-        })
-        .catch(err => console.log(err))
-    } */
+   
 
     const updateCustomer = (link,person) => {
         fetch(link, {
@@ -124,9 +112,9 @@ function CustomerList(){
         {headerName: 'First Name',width:50, field:'firstname', sortable: true, filter: true },
         {headerName: 'Last Name',width:50, field:'lastname', sortable: true, filter: true },
         {headerName: 'Email', field:'email',width:80, sortable: true, filter: true },
-        {headerName: 'Phone',width:80, field:'phone', sortable: true, filter: true },
-        {headerName: 'Address',width:80, field:'streetaddress', sortable: true, filter: true },
-        {headerName: 'Post Code',width:40, field:'postcode', sortable: true, filter: true },
+        {headerName: 'Phone',width:60, field:'phone', sortable: true, filter: true },
+        {headerName: 'Address',width:60, field:'streetaddress', sortable: true, filter: true },
+        {headerName: 'PC',width:40, field:'postcode', sortable: true, filter: true },
         {headerName: 'City',width:40, field:'city', sortable: true, filter: true },
         
         {
@@ -140,6 +128,7 @@ function CustomerList(){
         {
                 headerName: '',
                 width: 5,
+                margin: '-100px',
                  field:'',
                  cellRendererFramework: params => <DeleteIcon
                                                     size = 'small'
@@ -161,7 +150,7 @@ function CustomerList(){
 
 return (
     <div>
-        <div className="ag-theme-material" style={ { height: '650px', width: '90%', margin: 'auto' } }>
+        <div className="ag-theme-material" style={ { height: '750px', width: '100%', margin: 'auto' } }>
             <AgGridReact
             rowData = {customer}
             columnDefs = {columns}
@@ -170,10 +159,10 @@ return (
                     params.api.sizeColumnsToFit();
            
             }}
-        
+            
             >
             </AgGridReact>
-            <AddCustomer addCustomer={addCustomer}  />
+            <AddCustomer margin='10px' addCustomer={addCustomer}  />
         </div>
         <Snackbar
         open={open}

@@ -71,7 +71,7 @@ function EditCustomer(props) {
                     fullWidth
                 />
                 <TextField
-                    autoFocus={true}
+            
                     name='lastname'
                     value={person.lastname}
                     margin='dense'
@@ -80,7 +80,7 @@ function EditCustomer(props) {
                     fullWidth
                 />
                 <TextField
-                    autoFocus={true}
+              
                     name='email'
                     value={person.email}
                     margin='dense'
@@ -89,7 +89,7 @@ function EditCustomer(props) {
                     fullWidth
                 />
                 <TextField
-                    autoFocus={true}
+                
                     name='phone'
                     value={person.phone}
                     margin='dense'
@@ -98,7 +98,7 @@ function EditCustomer(props) {
                     fullWidth
                 />
                 <TextField
-                    autoFocus={true}
+                
                     name='streetaddress'
                     value={person.streetaddress}
                     margin='dense'
@@ -107,7 +107,7 @@ function EditCustomer(props) {
                     fullWidth
                 />
                 <TextField
-                    autoFocus={true}
+                
                     name='postcode'
                     value={person.postcode}
                     margin='dense'
@@ -116,7 +116,7 @@ function EditCustomer(props) {
                     fullWidth
                 />
                 <TextField
-                    autoFocus={true}
+              
                     name='city'
                     value={person.city}
                     margin='dense'

@@ -39,7 +39,7 @@ function AddCustomer(props) {
 
     return (
         <div>
-            <Button color = "primary" onClick = {handleClickOpen} variant="contained">Add customer</Button>
+            <Button margin="10px" size="large" color = "primary" onClick = {handleClickOpen} variant="contained">Add customer</Button>
             <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title" >
             <DialogTitle id="form-dialog-title">Add customer</DialogTitle>
             <DialogContent>
@@ -53,7 +53,7 @@ function AddCustomer(props) {
                     fullWidth
                 />
                 <TextField
-                    autoFocus={true}
+                  
                     name='lastname'
                     value={person.lastname}
                     margin='dense'
@@ -62,7 +62,7 @@ function AddCustomer(props) {
                     fullWidth
                 />
                 <TextField
-                    autoFocus={true}
+                  
                     name='email'
                     value={person.email}
                     margin='dense'
@@ -71,7 +71,7 @@ function AddCustomer(props) {
                     fullWidth
                 />
                 <TextField
-                    autoFocus={true}
+                   
                     name='phone'
                     value={person.phone}
                     margin='dense'
@@ -80,7 +80,7 @@ function AddCustomer(props) {
                     fullWidth
                 />
                 <TextField
-                    autoFocus={true}
+                 
                     name='streetaddress'
                     value={person.streetaddress}
                     margin='dense'
@@ -89,7 +89,7 @@ function AddCustomer(props) {
                     fullWidth
                 />
                 <TextField
-                    autoFocus={true}
+                   
                     name='postcode'
                     value={person.postcode}
                     margin='dense'
@@ -98,7 +98,7 @@ function AddCustomer(props) {
                     fullWidth
                 />
                 <TextField
-                    autoFocus={true}
+                    
                     name='city'
                     value={person.city}
                     margin='dense'

@@ -1,5 +1,5 @@
 import React, {useState,useEffect} from 'react';
-import { Calendar, momentLocalizer} from 'react-big-calendar';
+import { Calendar, momentLocalizer, Views} from 'react-big-calendar';
 import moment from 'moment';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 
@@ -17,11 +17,13 @@ const TrainingCalendar = () => {
  /*        console.log(trainings) */
     }
 
+    const allViews = Object.keys(Views).map(k=> Views[k]);
+
     const events = trainings.map((training)=> {
         return {
             id: training.id,
-            allDay: 'false',
-            activity: training.activity,
+            title: training.activity,
+            firstname: training.customer.firstname,
             start: training.date,
             end:moment().add(training.duration, 'minutes'),
             
@@ -29,19 +31,18 @@ const TrainingCalendar = () => {
     }
     )
 
-  /*   console.log(events) */
+        return (
+        <Calendar
+            localizer={localizer}
+            events={events}
+            startAccessor='start'
+            endAccessor='end'
+            step='60'
+            views={['month','agenda']}
+            style={{height:450}}
+        />
 
-    return (
-    <Calendar
-        localizer={localizer}
-        events={events}
-        startAccessor='start'
-        endAccessor='end'
-        views={['month','day','week']}
-        style={{height:450}}
-    />
-
-    )
+        )
 }
 
 export default TrainingCalendar;

@@ -14,6 +14,8 @@ import {
   KeyboardDatePicker,
 } from '@material-ui/pickers';
 
+
+
 const AddTraining = (props) => {
     const [training, setTraining] = useState({
         activity: '',
@@ -21,6 +23,7 @@ const AddTraining = (props) => {
         date: '',
     });
 
+    const [msg,setMsg] = useState("");
   
 
     const addTraining = () => {
@@ -36,6 +39,11 @@ const AddTraining = (props) => {
 
         })
         .then(_ => props.main)
+        .then(_ => {
+            setMsg('Updated customer successfully');
+            setOpen(true);
+        })
+
       
 
         .catch(err => console.log(err))
@@ -81,7 +89,7 @@ const AddTraining = (props) => {
 
     return (
         <div>
-        <Button color="primary" size="small" onClick={handleOpen} variant="contained" >Add training</Button>
+        <Button color="primary" size="small" onClick={handleOpen} variant="outlined" >Add training</Button>
         <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title" >
             <DialogTitle id="form-dialog-title">
             Add training ({props.params.data.firstname} {props.params.data.lastname})
@@ -97,7 +105,7 @@ const AddTraining = (props) => {
                         fullWidth
                         />
                     <TextField
-                        autoFocus={true}
+                   
                         name='duration'
                         value={training.duration}
                         margin='dense'
@@ -144,6 +152,7 @@ const AddTraining = (props) => {
             </DialogActions>
 
         </Dialog>
+        
         
         </div>
     )

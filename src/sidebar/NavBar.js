@@ -6,6 +6,8 @@ import './NavBar.css';
 import CloseIcon from '@material-ui/icons/Close';
 import MenuIcon from '@material-ui/icons/Menu';
 
+
+
 const NavBar = () => {
     const [sidebar,setSidebar] = useState(false)
 
@@ -15,7 +17,7 @@ const NavBar = () => {
         <div>
             <div className='navbar'>
                 <Link to ='#' className='menu-bars'>
-                    <MenuIcon onClick = {showSidebar} />
+                    <MenuIcon   onClick = {showSidebar} />
                 </Link>
             </div>
         <nav className={sidebar ? 'nav-menu-active' : 'nav-menu'}>

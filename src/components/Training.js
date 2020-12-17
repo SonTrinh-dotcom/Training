@@ -110,7 +110,7 @@ const Training = () => {
           
         },
         {
-            headerName: 'Action',
+            headerName: 'Delete',
             width: 50,
              field:'',
              cellRendererFramework: params => <DeleteIcon
